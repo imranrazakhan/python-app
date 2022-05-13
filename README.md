@@ -7,7 +7,7 @@
   - deactivate
 
 # Upload the image to Azure Container Registry
-* Prerequisites: *
+*Prerequisites:*
   
 # Install Helm
 - Prerequisite
