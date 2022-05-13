@@ -7,16 +7,16 @@
   - deactivate
 
 # Upload the image to Azure Container Registry
-- *Prerequisites:*
+- *Prerequisites
   - Azure Subscription
   - Create an Azure Container Registry from Azure portal / Terraform.
   - You’ll also need Azure CLI (command line interface) installed
-  # Log in to a registry
+- *Log in to a registry
   - az login
   - az acr login --name myregistry
-  # Tag your local image to be pushed to ACR with: 
+- *Tag your local image to be pushed to ACR with: 
   - docker tag pythonflaskapp [myAcrName].azurecr.io/pythonflaskapp:v1
-  # Push the image to ACR with: 
+- *Push the image to ACR with: 
   - docker push [myAcrName].azurecr.io/pythonflaskapp:v1
 
   
