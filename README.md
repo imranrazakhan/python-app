@@ -6,8 +6,8 @@
   - curl http://localhost:5000
   - deactivate
 
-# Upload to Azure Registry
-
+# Upload the image to Azure Container Registry
+* Prerequisites:
   
 # Install Helm
 - Prerequisite
