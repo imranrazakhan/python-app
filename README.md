@@ -1,3 +1,14 @@
+# Local 
+  - python3 -m venv .venv
+  - source .venv/bin/activate 
+  - docker build -t testflask -f build/Dockerfile .
+  - docker run -d -p 5000:5000 testflask
+  - curl http://localhost:5000
+  - deactivate
+
+# Upload to Azure Registry
+
+  
 # Install Helm
 - Prerequisite
   - A Linux machine with Kubectl and docker installed. 
