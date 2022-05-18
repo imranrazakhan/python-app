@@ -9,7 +9,7 @@
   
 # Azure Kubernetes Service(AKS) Deployment
   #### Prerequisites
-    - Azure Subscription
+    - For creation of Azure cloud resources, you will need to have a subscription that will allow you to create resources.
     - Create an Azure Kubernetes Service from Azure portal / Terraform.
     - Create an Azure Container Registry from Azure portal / Terraform.
     - You’ll also need Azure CLI (command line interface) installed
