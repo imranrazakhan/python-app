@@ -24,7 +24,7 @@
         - `docker push [myAcrName].azurecr.io/pythonflaskapp:v1`
 
   #### Configure ACR integration for AKS clusters
-    - We’re almost ready to deploy this thing—we just need to give our cluster permission to access the container registry.
+    We’re almost ready to deploy this thing—we just need to give our cluster permission to access the container registry.
       -  `az aks update -n myAKSCluster -g myResourceGroup --attach-acr <myAcrName>`
 
   
