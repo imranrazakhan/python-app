@@ -6,26 +6,26 @@
   - docker run -d -p 5000:5000 testflask
   - curl http://localhost:5000
   - deactivate
-  - 
-# Azure Kubernetes Service(AKS) Deployment
-- *Prerequisites*
-  - Azure Subscription
-  - Create an Azure Container Registry from Azure portal / Terraform.
-  - You’ll also need Azure CLI (command line interface) installed
   
-## Upload the image to Azure Container Registry
+# Azure Kubernetes Service(AKS) Deployment
+  - *Prerequisites*
+    - Azure Subscription
+    - Create an Azure Kubernetes Service from Azure portal / Terraform.
+    - Create an Azure Container Registry from Azure portal / Terraform.
+    - You’ll also need Azure CLI (command line interface) installed
+  
+  ## Upload the image to Azure Container Registry (ACR)
+      - *Log in to a registry*
+        - `az login`
+        - `az acr login --name myregistry`
+      - *Tag your local image to be pushed to ACR with:*
+        - `docker tag pythonflaskapp [myAcrName].azurecr.io/pythonflaskapp:v1`
+      - *Push the image to ACR with:*
+        - `docker push [myAcrName].azurecr.io/pythonflaskapp:v1`
 
-- *Log in to a registry*
-  - az login
-  - az acr login --name myregistry
-- *Tag your local image to be pushed to ACR with:*
-  - docker tag pythonflaskapp [myAcrName].azurecr.io/pythonflaskapp:v1
-- *Push the image to ACR with:*
-  - docker push [myAcrName].azurecr.io/pythonflaskapp:v1
-
-## Configure Azure Container Registry(ACR) integration for Azure Kubernetes Service(AKS) clusters
-- We’re almost ready to deploy this thing—we just need to give our cluster permission to access the container registry.
-  -  `az aks update -n myAKSCluster -g myResourceGroup --attach-acr <myAcrName>`
+  ## Configure ACR integration for AKS clusters
+    - We’re almost ready to deploy this thing—we just need to give our cluster permission to access the container registry.
+      -  `az aks update -n myAKSCluster -g myResourceGroup --attach-acr <myAcrName>`
 
   
 # Install Helm
