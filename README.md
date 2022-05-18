@@ -12,7 +12,10 @@
     - For creation of Azure cloud resources, you will need to have a subscription that will allow you to create resources.
     - Create an Azure Kubernetes Service from Azure portal / Terraform.
     - Create an Azure Container Registry from Azure portal / Terraform.
-    - You’ll also need Azure CLI (command line interface) installed
+    - These tools are required:
+      - Azure CLI tool (az): command line tool that interacts with Azure API.
+      - Kubernetes client tool (kubectl): command line tool that interacts with Kubernetes API
+      - Helm (helm): command line tool for “templating and sharing Kubernetes manifests”  that are bundled as Helm chart packages.
   
   #### Upload the image to Azure Container Registry (ACR)
     - *Log in to a registry*
