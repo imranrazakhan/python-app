@@ -2,8 +2,8 @@
   - python3 -m venv .venv
   - source .venv/bin/activate 
   - pip install -r requirements.txt
-  - docker build -t testflask -f build/Dockerfile .
-  - docker run -d -p 5000:5000 testflask
+  - docker build -t pythonflaskapp -f build/Dockerfile .
+  - docker run -d -p 5000:5000 pythonflaskapp
   - curl http://localhost:5000
   - deactivate
   
