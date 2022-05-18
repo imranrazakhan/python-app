@@ -14,7 +14,7 @@
     - Create an Azure Container Registry from Azure portal / Terraform.
     - You’ll also need Azure CLI (command line interface) installed
   
-  ## Upload the image to Azure Container Registry (ACR)
+  #### Upload the image to Azure Container Registry (ACR)
       - *Log in to a registry*
         - `az login`
         - `az acr login --name myregistry`
@@ -23,7 +23,7 @@
       - *Push the image to ACR with:*
         - `docker push [myAcrName].azurecr.io/pythonflaskapp:v1`
 
-  ## Configure ACR integration for AKS clusters
+  #### Configure ACR integration for AKS clusters
     - We’re almost ready to deploy this thing—we just need to give our cluster permission to access the container registry.
       -  `az aks update -n myAKSCluster -g myResourceGroup --attach-acr <myAcrName>`
 
