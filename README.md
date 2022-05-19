@@ -55,7 +55,7 @@
   #### Deploy to AKS using Helm
   - Run `helm install flaskapp ./app/` as we already set context of kubectl helm will use same context and deploy app in AKS.
   - verify by running `kubectl get pods`
-  - Save your charts as .tgz with 'helm package ./app/'
+  - Save your charts as .tgz with `helm package ./app/`
     
   #### Deploy to AKS using Kubectl
   - `helm template flaskapp ./app/ > flask-deployment.yaml` 
