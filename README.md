@@ -43,16 +43,16 @@
       `kubectl config use-context <myAKSCluster>`
 
   
-  #### Install Helm and deploy helm chart
-    - Prerequisite
-      - A Linux machine with Kubectl and docker installed. 
+  #### To deploy on AKS we will use Helm (The Kubernetes package manager)
+    - If helm is not installed, use below steps to install
       - wget https://get.helm.sh/helm-v3.8.2-linux-amd64.tar.gz
       - tar xvf helm-v3.8.2-linux-amd64.tar.gz
       - sudo mv linux-amd64/helm /usr/local/bin
-    - Navigate to deploy (create if not available) folder in project
+    - Navigate to deploy folder (create if not available) of project
     - Run `helm create app`
     - Change values of values.yaml as per requirements
     - Run `helm install flaskapp ./app/` as we already set context of kubectl helm will use same context and deploy app in AKS.
     - verify by running `kubectl get pods`
+    - Save your charts as .tgz with 'helm package ./app/'
       
       
