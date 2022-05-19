@@ -29,6 +29,17 @@
   #### Configure ACR integration for AKS clusters
     We’re almost ready to deploy this thing—we just need to give our cluster permission to access the container registry.
       -  `az aks update -n myAKSCluster -g myResourceGroup --attach-acr <myAcrName>`
+      
+  #### Configure kubectl context to access AKS cluster
+    When you interact with an AKS cluster using the kubectl tool, a configuration file is used that defines cluster connection information. This configuration file is     typically stored in ~/.kube/config. Multiple clusters can be defined in this kubeconfig file. You switch between clusters using the kubectl config use-context         command.
+    - The az aks get-credentials command lets you get the access credentials for an AKS cluster and merges them into the kubeconfig file. 
+      `az aks get-credentials -n <myAKSCluster> -g <myResourceGroup>`
+      
+    - Using kubectl config get-contexts we'll be able to see all the clusters we've authenticated against:
+      `kubectl config get-contexts`
+      
+    - We can switch context with below command to deploy applications in different enviornment like DEV / QA or Prod
+      `kubectl config use-context <myAKSCluster>`
 
   
 # Install Helm
