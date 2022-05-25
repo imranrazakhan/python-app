@@ -77,10 +77,10 @@
     1. using the GUI
     2. using the CLI
     3. Declarative Setup (Argo CD applications, projects and settings can be defined declaratively using Kubernetes manifests. These can be updated using kubectl apply, without needing to touch the argocd command-line tool). 
-      - yaml files for argocd project and application created under deploy directory.
-      - All resources, including Application and AppProject specs, have to be installed in the Argo CD namespace (by default argocd).
-      - `kubectl -n argocd apply -f project.yaml`
-      - `kubectl -n argocd apply -f application.yaml`
+       - yaml files for argocd project and application created under deploy directory.
+       - All resources, including Application and AppProject specs, have to be installed in the Argo CD namespace (by default argocd).
+       - `kubectl -n argocd apply -f project.yaml`
+       - `kubectl -n argocd apply -f application.yaml`
   
   
       
