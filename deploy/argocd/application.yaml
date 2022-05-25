@@ -9,7 +9,7 @@ spec:
   project: dev-project
   # Source of the application manifests
   source:
-    repoURL: file://sample-apps/python-app/python-app.git
+    repoURL: https://github.com/imranrazakhan/python-app.git
     targetRevision: HEAD # For Helm, this refers to the chart version.
     path: deploy/app/
     helm:
