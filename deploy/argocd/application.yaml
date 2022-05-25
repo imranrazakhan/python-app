@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-deploy-app
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: argocd
+spec:
+  # The argocd project the application belongs to.
+  project: dev-project
+  # Source of the application manifests
+  source:
+    repoURL: file://sample-apps/python-app/python-app.git
+    targetRevision: HEAD # For Helm, this refers to the chart version.
+    path: deploy/app/
+    helm:
+      # Helm values files for overriding values in the helm chart
+      # The path is relative to the spec.source.path directory defined above
+      valueFiles:
+      - values.yaml
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
+	  
