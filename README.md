@@ -73,7 +73,7 @@
     - `chmod +x /usr/local/bin/argocd`
   - Argo CD auto generated a password during the deployment. We need to get the Argo CD password so we can log into it. To get the password run the following:
     -  ```kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath=”{.data.password}” | base64 -d && echo```
-  - Deploying an App from the Argo CD CLI: 
+  - Argo CD can be configured in three different ways: using the GUI, using the CLI, or using Kubernetes Manifest files. In this example, I use the third method.
     -    
   
   
